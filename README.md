@@ -1,6 +1,7 @@
 # CS2 128tick
 Simple server mod to change tickrate to 128 in CS2.
 
+Use at your own risk!
 ## Installation
 Create a folder structure like this in your server installation:
 
