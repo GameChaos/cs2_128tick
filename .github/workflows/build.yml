@@ -1,0 +1,25 @@
+
+name: Compile mod
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: ilammy/msvc-dev-cmd@v1.4.1
+    - name: compile
+      run: |
+        cl -O2 -LD -nologo -std:c11 -Zi -FC -GR- -EHa- -Oi -WX -W4 -wd4152 -wd4127 -wd4101 -wd4201 -wd4100 -wd4189 -wd4505 -D_CRT_SECURE_NO_WARNINGS -DSUBHOOK_STATIC -I code code\cs2loader.c code\subhook\subhook.c /link -incremental:no -opt:ref -opt:icf -OUT:server.dll
+
+    - name: upload executable
+      uses: actions/upload-artifact@v2
+      with:
+        name: windows
+        path: |
+          server.dll
+          LICENSE
+          subhook/LICENSE.txt
