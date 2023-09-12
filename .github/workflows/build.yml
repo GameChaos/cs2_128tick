@@ -22,4 +22,4 @@ jobs:
         path: |
           server.dll
           LICENSE
-          subhook/LICENSE.txt
+          */subhook/LICENSE.txt
