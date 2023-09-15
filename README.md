@@ -1,3 +1,5 @@
+# This no longer works as of 2023-09-14 due to tickrate being hardcoded on the client.
+
 # CS2 128tick
 Simple server mod to change tickrate to 128 in CS2.
 
